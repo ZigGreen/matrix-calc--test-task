@@ -1,0 +1,38 @@
+.usual-button {
+  background: linear-gradient(top, #fefefe 0%, #ececec 100%);
+  border: 1px solid rgba(0,0,0,.15);
+  border-bottom-color: rgba(0,0,0,.3);
+  color: #404040;
+  margin: 10px 0;
+  padding: 3px 8px 5px 8px;
+  border-radius: 3px;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+
+.usual-button {
+  &:focus, &.--focus-state {
+    outline: 2px solid #5199db;
+    border-color: white;
+  }
+
+  &:disabled, &.--disabled-state {
+    background: #f2f2f2;
+    border-color: rgba(0,0,0,.15);
+    color: #a0a0a0;
+  }
+
+  &:not(:disabled):not(.--disabled-state) {
+    &:hover, &.--hover-state {
+      background: linear-gradient(top, #f2f2f2 0%, #dfdfdf 100%);;
+    }
+
+    &:active, &.--active-state {
+      background: linear-gradient(top, #a6a6a6 0%, #d0d0d0 3px,  #d9d9d9 100%);
+      border: 1px solid rgba(0,0,0,.20);
+      border-top-color: rgba(0,0,0,.35);
+    }
+  }
+}

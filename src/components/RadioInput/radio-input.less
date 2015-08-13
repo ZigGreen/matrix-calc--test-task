@@ -1,0 +1,59 @@
+.radio-input {
+  overflow: hidden;
+  position: relative;
+  margin-right: 15px;
+}
+
+.radio-input__input {
+  margin: 0;
+  position: absolute;
+  top: -100px;
+  width: 16px;
+  height: 16px;
+}
+
+.radio-input__label {
+  position: relative;
+  top: -1px;
+}
+
+.radio-input__fake-input {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+.radio-input__fake-input__focus {
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.radio-input__fake-input, .radio-input__fake-input__focus {
+  background: url('./radio-input-states.png') no-repeat -104px 2px;
+}
+
+.radio-input.--disabled-state .radio-input__fake-input {
+  background-position: 2px 2px;
+}
+
+.radio-input:not(.--disabled-state) {
+
+  &.--focus-state .radio-input__fake-input__focus,
+  .radio-input__input:focus ~ .radio-input__fake-input__focus {
+    background-position: -25px 1px;
+  }
+
+  &:hover .radio-input__fake-input {
+    background-position: -52px 2px;
+  }
+
+  &.--checked-state .radio-input__fake-input,
+  .radio-input__input:checked ~ .radio-input__fake-input__focus .radio-input__fake-input {
+    background-position: -78px 2px;
+  }
+
+}
+
+
+
+

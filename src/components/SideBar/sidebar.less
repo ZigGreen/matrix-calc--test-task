@@ -1,0 +1,22 @@
+.sidebar {
+  height: 100%;
+  background: #bcbcbc;
+  position: absolute;
+  bottom: 0;
+  width: 330px;
+  transition: background-color 0.3s ease;
+
+  &.--active-state {
+    background: #5199db;
+  }
+
+  &.--active-state.--error-state, &.--error-state {
+    background: #f6c1c0;
+  }
+}
+
+.sidebar__error {
+  color: #da0902;
+}
+
+

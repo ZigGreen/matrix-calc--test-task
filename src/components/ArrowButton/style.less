@@ -1,0 +1,145 @@
+.color {
+  background: linear-gradient(top, #4ba91d 0%, #38920c 100%);
+}
+
+.colorActive {
+  background: linear-gradient(top, #29660b 0%, #35840e 3px, #35840e 100%);
+}
+
+@colorDisabled: #f2f2f2;
+@textColorDisabled: #808080;
+@angle : 56deg;
+.arrow-button__border {
+  border: 1px solid rgba(26,103,6,.7);
+  border-bottom-color: rgba(22,80,7,.8);
+}
+.arrow-button__border-active {
+  border: 1px solid rgba(7,57,0,.7);
+  border-bottom-color: rgba(13,40,0,.8);
+}
+
+@borderFocus: 1px solid #FFF;
+@borderDisabled: 1px solid rgba(0,0,0,.15);
+@arrowWidth: 15px;
+
+.arrow-button--outline {
+  outline: 2px solid #5199db;
+  border: @borderFocus;
+}
+
+.arrow-button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: transparent;
+}
+
+
+.arrow-button:focus, .arrow-button.--focus-state  {
+  outline: none;
+  .btn {
+    .cb {
+      .c {
+        .arrow-button--outline;
+      }
+    }
+    .a .b {
+      .arrow-button--outline;
+    }
+
+  }
+}
+
+.arrow-button:disabled, .arrow-button.--disabled-state {
+  .btn {
+    .cb {
+      .c {
+        border: @borderDisabled;
+        background: @colorDisabled;
+        color: @textColorDisabled
+      }
+    }
+    .a .b {
+      border: @borderDisabled;
+      .d {
+        background: @colorDisabled;
+      }
+    }
+
+  }
+}
+
+.arrow-button:active,  .arrow-button.--active-state {
+  &:not(:disabled) {
+    .btn {
+      .cb {
+        .c {
+          .arrow-button__border-active;
+          .colorActive;
+        }
+      }
+      .a .b {
+        .arrow-button__border-active;
+        .d {
+          .colorActive;
+        }
+      }
+
+    }
+  }
+
+}
+
+.btn {
+  transition: all 1s;
+  position: relative;
+  color: white;
+
+  display: inline-block;
+  .cb {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    .c {
+      .arrow-button__border;
+      border-radius: 3px 0 0 3px;
+      border-right-style: none;
+      padding: 7px;
+      padding-left: 15px;
+      .color;
+    }
+  }
+  .a {
+    height: 100%;
+    width: @arrowWidth;
+    position: absolute;
+    top: 0;
+    right: -@arrowWidth+1;
+    overflow: hidden;
+  }
+  .a .b {
+    .arrow-button__border;
+    border-radius: 3px;
+    top: 50%;
+    right: 1px;
+    width: 100px;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    transform-origin: 100% 0;
+    transform: rotate(@angle) skew((@angle - 45)*2);
+
+    .d {
+
+      right: 0;
+      position: absolute;
+      transform-origin: 100% 0;
+      width: 100%;
+      height: 100%;
+      .color;
+      transform: skew(-(@angle - 45)*2) rotate(-@angle) translate(0, -50%);
+    }
+  }
+
+}

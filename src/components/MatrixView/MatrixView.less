@@ -1,0 +1,32 @@
+@spacing: 10px;
+.matrix-view {
+  position: relative;
+}
+
+.matrix-view__bracket {
+  display: block;
+  height: 100%;
+  content: '';
+  position: absolute;
+  width: @spacing;
+  /* background-color: black; */
+  border: 2px solid #404040;
+  top:0;
+  box-sizing: border-box;
+
+
+  &.--open-bracket {
+    border-right: none;
+    left: 0;
+  }
+
+  &.--close-bracket {
+    border-left: none;
+    right: 0;
+  }
+}
+
+.matrix-view__table{
+  border-collapse: separate;
+  border-spacing: @spacing;
+}
