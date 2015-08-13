@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "kontur company applicant test task implementation",
   "scripts": {
-    "start": "node_modules/.bin/gulp & node server.js",
+    "start": "node node_modules/gulp/bin/gulp.js & node server.js",
     "lint": "eslint src"
   },
   "repository": {
