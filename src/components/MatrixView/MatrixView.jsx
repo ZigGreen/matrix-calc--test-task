@@ -10,7 +10,7 @@ export default class MatrixView extends Component {
                     {row.map((value, columnIndex) => (
                         <td>
                             <Input disabled={this.props.disabled}
-                                   placeholder={`${this.props.matrixName}${rowIndex},${columnIndex}`}
+                                   placeholder={`${this.props.matrixName}${rowIndex+1},${columnIndex+1}`}
                                    value={value==undefined ? "": value}
                                    onFocus={this.props.onFocus}
                                    onBlur={this.props.onBlur}
