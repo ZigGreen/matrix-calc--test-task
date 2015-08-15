@@ -8,7 +8,7 @@
 
 @colorDisabled: #f2f2f2;
 @textColorDisabled: #808080;
-@angle : 56deg;
+@angle : 60deg;
 .arrow-button__border {
   border: 1px solid rgba(26,103,6,.7);
   border-bottom-color: rgba(22,80,7,.8);
@@ -20,7 +20,7 @@
 
 @borderFocus: 1px solid #FFF;
 @borderDisabled: 1px solid rgba(0,0,0,.15);
-@arrowWidth: 15px;
+@arrowWidth: 12px;
 
 .arrow-button--outline {
   outline: 2px solid #5199db;
@@ -108,8 +108,7 @@
       .arrow-button__border;
       border-radius: 3px 0 0 3px;
       border-right-style: none;
-      padding: 7px;
-      padding-left: 15px;
+      padding: 8px 15px;
       .color;
     }
   }
@@ -118,7 +117,7 @@
     width: @arrowWidth;
     position: absolute;
     top: 0;
-    right: -@arrowWidth+1;
+    right: -@arrowWidth;
     overflow: hidden;
   }
   .a .b {
@@ -139,7 +138,7 @@
       position: absolute;
       transform-origin: 100% 0;
       width: 100%;
-      height: 100%;
+      height: 150%;
       .color;
       transform: skew(-(@angle - 45)*2) rotate(-@angle) translate(0, -50%);
     }
